@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM LEARNING</title>
+
+    <style>
+        .big-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="big-black">
+    <h1>DOM LEARNING</h1>
+
+    <ul class="language">
+        <li>JS</li>
+    </ul>
+
+    <script>
+        // goal : add new element 
+        function addlang(lang) {
+            const li = document.createElement('li');
+            li.innerHTML = `${lang}`;
+
+            document.querySelector('.language').appendChild(li);
+        }
+        // Add a new language
+        addlang("C++");
+        addlang("python")
+
+        // add lang in optmized way : thers a issue 
+        // here we no need to traverse the tree 
+        function addoptlang (lang){
+          const li =  document.createElement('li');
+          li.appendChild(document.createTextNode(lang))
+          document.querySelector('.language').appendChild(li)
+        }
+        addoptlang('typescript')
+
+        // Edit and replace
+       const secondLang = document.querySelector("li:nth-child(2)");
+       const newli = document.createElement('li');
+       newli.textContent = "HTML";
+       secondLang.replaceWith(newli);
+
+       // Edit and replace using outerHTML
+       const firstLang = document.querySelector("li:nth-child(1)");
+       firstLang.outerHTML = '<li>JAVA</li>';
+      
+       // REMOVE
+       const anyLang = document.querySelector("li:nth-child(3)");
+       anyLang.remove();
+    </script>
+</body>
+
+</html>

@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM LEARNING </title>
-    <style> 
-        .big-black{
+
+    <title>DOM LEARNING</title>
+
+    <style>
+        .big-black {
             background-color: #212121;
             color: #fff;
         }
     </style>
 </head>
+
 <body class="big-black">
-    <div class="big-black"> 
-        <h1 id="title" class="heading"> LEARN WITH FUN </h1>
-        <h2> jc b kjghbfc jhgcf jhgfcd</h2>
-        <h2> yutrety bvc ydb knbhf ukjbvf </h3>
-        <h2> irjb jfug fygw kits kh </h2>
 
-        <ul>
+    <div class="big-black">
+
+        <h1 id="title" class="heading">LEARN WITH FUN</h1>
+
+        <h2>jc b kjghbfc jhgcf jhgfcd</h2>
+        <h2>yutrety bvc ydb knbhf ukjbvf</h2>
+        <h2>irjb jfug fygw kits kh</h2>
+
+        <ul class="days">
             <li>morning</li>
-            <li> day</li>
+            <li>day</li>
             <li>evening</li>
-            <li> night</li>
-
+            <li>night</li>
         </ul>
+
     </div>
+
+    <div class="parent">
+        
+        <h1 style="color: brown;">SEASON</h1>
+        // COMMNETS 
+        <div class="season">SUMMER</div>
+        <div class="season">MONSOON</div>
+        <div class="season">WINTER</div>
+        <div class="season">AUTUMN</div>
+
+    </div>
+
+    <script>
+        // Select the parent element using its class
+        const parent = document.querySelector(".parent");
+
+        // Get all direct child elements
+        console.log(parent.children);
+
+        // Print the second child element's HTML
+        console.log(parent.children[1].innerHTML);
+
+        // Change the text color of all children
+        for (let i = 0; i < parent.children.length; i++) {
+            parent.children[i].style.color = "#FFA500";
+
+            console.log(parent.children[i].innerHTML);
+        }
+
+        // Print the first child element
+        console.log(parent.firstElementChild);
+
+        // Print the last child element
+        console.log(parent.lastElementChild);
+
+        // Select the first element with class "season"
+        const dayone = document.querySelector(".season");
+        console.log(dayone);
+        console.log(dayone.parentElement);
+        console.log(dayone.nextElementSibling);
+        console.log("NODES:", parent.childNodes);
+    </script>
+
 </body>
+
 </html>

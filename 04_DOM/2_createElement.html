@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM LEARNING</title>
+
+    <style>
+        .big-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="big-black">
+
+    <script>
+        // CREATE AN H1 ELEMENT
+        const h = document.createElement('h1');
+
+        // CREATE A DIV ELEMENT
+        const div = document.createElement('div');
+        console.log(div);
+
+        // SET CLASS NAME
+        div.className = "main";
+
+        // SET ID
+        div.id = Math.floor(Math.random() * 100);
+
+        // ADD TEXT TO THE H1
+        h.innerText = "LEARN DOM WITH JAVASCRIPT";
+
+        // ADD H1 INSIDE THE DIV
+        div.appendChild(h);
+
+        // ADD DIV TO THE BODY
+        document.body.appendChild(div);
+
+        div.setAttribute("title", "generated title");
+        div.style.backgroundColor = "grey";
+        div.style.padding = "15px";
+
+    </script>
+
+</body>
+
+</html>
